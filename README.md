@@ -86,21 +86,9 @@ Three modules: `frontend/` (React + Vite, staff editor + audio playback), `backe
 
 ---
 
-## Model serving for upstream agents
+## Model serving
 
-`POST /api/generate/song` is the integration point for upstream creative-AI agents (e.g. TheVoyager). The caller sends a genre and length; TheArtist owns key / BPM / time signature / chord-generation checkpoint / per-track instrument selection internally and returns a full 3-track render.
-
-```bash
-curl -sS http://localhost:8000/api/generate/song \
-  -H 'Content-Type: application/json' \
-  -d '{"genre": "jazz", "length_bars": 8}'
-```
-
-**Response shape:** `{key, bpm, time_signature, bars, tracks: {harmony, bass, drum}, midi_b64, model_used}`. Each track exposes per-event `{bar, beat, pitch, duration, velocity}` plus a GM Soundfont instrument name. Drum events use voice letters (`K`/`S`/`H`/...) mapped to GM channel-10 percussion. `midi_b64` is a base64-encoded MIDI render bundling the three tracks for the caller's downstream synthesis.
-
-**Genre routing.** The chord layer dispatches to the appropriate checkpoint (jazz → F4, pop → F1, others → matching LoRA). Harmony, bass, and drum are deterministic per-genre patterns in v1; learned chord-conditioned multitrack arrangement is the next research step.
-
-Supported genres: `jazz, pop, rock, blues, bossa, classical, country, rnb_soul, hip_hop, electronic, funk, folk, gospel`. `length_bars` accepts 1–64.
+`POST /api/generate/song` returns a full 3-track render (`{key, bpm, bars, tracks: {harmony, bass, drum}, midi_b64}`) for a `(genre, length_bars)` pair. It powers TheArtist's own playback and is also exposed as the music engine for [TheVoyager](https://github.com/PearlLeeStudio/TheVoyager) (place + memory → personal soundtrack).
 
 ---
 
