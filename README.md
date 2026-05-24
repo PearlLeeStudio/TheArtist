@@ -19,7 +19,7 @@ This repository contains the **public-facing summary**. The released artifacts a
 
 - **Paper** — [arXiv:2605.04998](https://arxiv.org/abs/2605.04998), *Empirical Study of Pop and Jazz Mix Ratios for Genre-Adaptive Chord Generation* (Lee 2026)
 - **Models** — [huggingface.co/PearlLeeStudio](https://huggingface.co/PearlLeeStudio) — Phase 0 baseline + F1–F5 fine-tunes + 11 per-genre LoRA adapters
-- **Demo video** — *coming soon*
+- **Demo video** — [youtu.be/iSDj4VK9nKc](https://youtu.be/iSDj4VK9nKc) (interactive staff editor, MIDI input, AI generation, per-genre LoRA playback)
 
 The application source code, training pipeline, evaluation scripts, and internal design notes are kept private. This document describes the project at the level of structure, datasets, and design choices.
 
