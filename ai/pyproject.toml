@@ -1,0 +1,37 @@
+[project]
+name = "theartist-ai"
+version = "0.1.0"
+description = "Music Transformer training pipeline for chord generation"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "chromadb>=1.5.8",
+    "datasets>=4.8.4",
+    "matplotlib>=3.10.8",
+    "music21>=9.9.1",
+    "openai>=2.32.0",
+    "pypdf>=6.10.2",
+    "pyyaml>=6.0.3",
+    "sentence-transformers>=5.4.1",
+    "setuptools<81",
+    "tensorboard>=2.20.0",
+    "torch>=2.5.1",
+    "torchaudio>=2.5.1",
+    "torchvision>=0.20.1",
+    "peft>=0.13.0",
+    "soundfile>=0.13.1",
+    "pretty-midi>=0.2.11",
+    "tabulate>=0.10.0",
+]
+
+[[tool.uv.index]]
+name = "pytorch-cu121"
+url = "https://download.pytorch.org/whl/cu121"
+explicit = true
+
+# CUDA wheels exist only for linux/windows on the cu121 index; macOS falls
+# back to PyPI (CPU/MPS wheels) so `uv sync` works on a Mac too.
+[tool.uv.sources]
+torch = [{ index = "pytorch-cu121", marker = "sys_platform == 'linux'" }]
+torchvision = [{ index = "pytorch-cu121", marker = "sys_platform == 'linux'" }]
+torchaudio = [{ index = "pytorch-cu121", marker = "sys_platform == 'linux'" }]

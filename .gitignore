@@ -1,0 +1,44 @@
+node_modules/
+dist/
+__pycache__/
+.venv/
+*.pyc
+
+# Datasets, caches, training artifacts — not redistributed (see README → Datasets)
+ai/checkpoints/
+ai/data/raw/
+ai/data/processed/
+ai/data/splits/
+ai/data/splits.backup*
+ai/data/cache/
+ai/data/berklee/
+ai/data/openmusictheory/
+ai/data/physics/
+ai/data/related/
+ai/runs/
+ai/logs/
+ai/results/
+*.pt
+*.pth
+*.npy
+*.safetensors
+adapter_config.json
+adapter_model.safetensors
+
+# HuggingFace staging — weights live on the Hub, not in git
+model/**/*.pt
+model/**/*.pth
+model/**/*.bin
+model/**/*.safetensors
+model/**/config.json
+model/**/tokenizer.json
+model/**/tokenizer.py
+model/**/model.py
+model/**/eval_results.csv
+model/**/adapter_config.json
+model/**/embedding_extension.pt
+
+# WSL artifact
+*:Zone.Identifier
+
+.claude/
