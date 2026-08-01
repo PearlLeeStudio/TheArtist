@@ -1,0 +1,14 @@
+filename,genre,model,rank,seed,prompt,length_bars,bpm,key,time_sig,variant,arranged
+samples/jazz_f1.mid,jazz,F1 (ft_jazz_pop80),-,42,Fmaj-Bbmaj|Fmaj-Bbmaj|Fmaj-Bbmaj|Fmaj-Bbmaj|Fmaj-Bbmaj|Fmaj-Bbmaj|Fmaj-Bbmaj|Fmaj-Bbmaj,8,110,F major,4/4,f1_arranged,yes
+samples/pop_f1.mid,pop,F1 (ft_jazz_pop80),-,42,Gmaj-Cmaj|Gmaj-Cmaj|Gmaj-Cmaj|Gmaj-Cmaj|Gmaj-Cmaj|Gmaj-Cmaj|Gmaj-Cmaj|Gmaj-Cmaj,8,110,C major,4/4,f1_arranged,yes
+samples/blues_f1.mid,blues,F1 (ft_jazz_pop80),-,42,Bmaj-Bmaj|Bmaj-Bmaj|Bmaj-Bmaj|Bmaj-Bmaj|Bmaj-Bmaj|Bmaj-Bmaj|Bmaj-Bmaj|Bmaj-Bmaj,8,90,E major,4/4,f1_arranged,yes
+samples/bossa_f1.mid,bossa,F1 (ft_jazz_pop80),-,42,Cmaj-Cmaj|Cmaj-Cmaj|Cmaj-Cmaj|Cmaj-Cmaj|Cmaj-Cmaj|Cmaj-Cmaj|Cmaj-Cmaj|Cmaj-Cmaj,8,110,F major,4/4,f1_arranged,yes
+samples/classical_f1.mid,classical,F1 (ft_jazz_pop80),-,42,Gmaj-Gmaj|Gmaj-Gmaj|Gmaj-Gmaj|Gmaj-Gmaj|Gmaj-Gmaj|Gmaj-Gmaj|Gmaj-Gmaj|Gmaj-Gmaj,8,80,C major,4/4,f1_arranged,yes
+samples/country_f1.mid,country,F1 (ft_jazz_pop80),-,42,Dmaj-Dmaj|Dmaj-Dmaj|Dmaj-Dmaj|Dmaj-Dmaj|Dmaj-Dmaj|Dmaj-Dmaj|Dmaj-Dmaj|Dmaj-Dmaj,8,100,G major,4/4,f1_arranged,yes
+samples/electronic_f1.mid,electronic,F1 (ft_jazz_pop80),-,42,Bmaj7-Bmaj7|Bmaj7-Bmaj7|Bmaj7-Bmaj7|Bmaj7-Bmaj7|Bmaj7-Bmaj7|Bmaj7-Bmaj7|Bmaj7-Bmaj7|Bmaj7-Bmaj7,8,128,A minor,4/4,f1_arranged,yes
+samples/folk_f1.mid,folk,F1 (ft_jazz_pop80),-,42,Dmaj-Dmaj|Dmaj-Dmaj|Dmaj-Dmaj|Dmaj-Dmaj|Dmaj-Dmaj|Dmaj-Dmaj|Dmaj-Dmaj|Dmaj-Dmaj,8,100,G major,4/4,f1_arranged,yes
+samples/funk_f1.mid,funk,F1 (ft_jazz_pop80),-,42,Cmaj-Cmaj|Cmaj-Cmaj|Cmaj-Cmaj|Cmaj-Cmaj|Cmaj-Cmaj|Cmaj-Cmaj|Cmaj-Cmaj|Cmaj-Cmaj,8,110,F major,4/4,f1_arranged,yes
+samples/gospel_f1.mid,gospel,F1 (ft_jazz_pop80),-,42,Cmaj-Cmaj|Cmaj-Cmaj|Cmaj-Cmaj|Cmaj-Cmaj|Cmaj-Cmaj|Cmaj-Cmaj|Cmaj-Cmaj|Cmaj-Cmaj,8,90,F major,4/4,f1_arranged,yes
+samples/hip_hop_f1.mid,hip_hop,F1 (ft_jazz_pop80),-,42,Bmaj7-Bmaj7|Bmaj7-Bmaj7|Bmaj7-Bmaj7|Bmaj7-Bmaj7|Bmaj7-Bmaj7|Bmaj7-Bmaj7|Bmaj7-Bmaj7|Bmaj7-Bmaj7,8,90,A minor,4/4,f1_arranged,yes
+samples/rnb_soul_f1.mid,rnb_soul,F1 (ft_jazz_pop80),-,42,Fmaj-Fmaj|Fmaj-Fmaj|Fmaj-Fmaj|Fmaj-Fmaj|Fmaj-Fmaj|Fmaj-Fmaj|Fmaj-Fmaj|Fmaj-Fmaj,8,90,Bb major,4/4,f1_arranged,yes
+samples/rock_f1.mid,rock,F1 (ft_jazz_pop80),-,42,Bmaj-Emaj|Bmaj-Emaj|Bmaj-Emaj|Bmaj-Emaj|Bmaj-Emaj|Bmaj-Emaj|Bmaj-Emaj|Bmaj-Emaj,8,120,E major,4/4,f1_arranged,yes

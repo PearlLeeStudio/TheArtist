@@ -1,0 +1,39 @@
+# Evaluation prompts for generation comparison across experiments.
+# Pop and jazz prompts to test genre-specific generation quality.
+
+# Pop prompts
+- name: pop_basic_I_vi_ii_V
+  song:
+    key: Cmaj
+    time_signature: "4/4"
+    genre: pop
+    bars: [["C", "Am"], ["Dm", "G"]]
+
+- name: pop_rock_progression
+  song:
+    key: Gmaj
+    time_signature: "4/4"
+    genre: rock
+    bars: [["G", "D"], ["Em", "C"]]
+
+# Jazz prompts
+- name: jazz_ii_V_I
+  song:
+    key: Cmaj
+    time_signature: "4/4"
+    genre: jazz
+    bars: [["Dm7", "G7"], ["Cmaj7"]]
+
+- name: jazz_turnaround
+  song:
+    key: Bbmaj
+    time_signature: "4/4"
+    genre: jazz
+    bars: [["Bbmaj7", "G7"], ["Cm7", "F7"]]
+
+- name: jazz_minor_ii_V
+  song:
+    key: Amin
+    time_signature: "4/4"
+    genre: jazz
+    bars: [["Bm7b5", "E7"], ["Am7"]]

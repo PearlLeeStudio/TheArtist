@@ -1,0 +1,29 @@
+# F1 v2 restoration seed run #2 (2026-06-12) — identical to ft_jazz_pop80_v2.yaml
+# except run_name + explicit seed. Purpose: multi-seed evidence that jazz_val
+# selection reliably restores a hash-distinct jazz-adapted base (novelty memo #1;
+# kills the n=1 reviewer attack alongside the selection-criterion ablation).
+run_name: ft_jazz_pop80_v2_s2
+seed: 123
+resume_from: checkpoints/phase0_pop_baseline/best.pt
+pop_mix_count: 10000
+select_best_on: jazz_val
+epochs: 10
+batch_size: 64
+gradient_accumulation_steps: 2
+lr: 2.0e-5
+weight_decay: 0.01
+warmup_epochs: 2
+max_grad_norm: 1.0
+d_model: 512
+n_heads: 8
+d_ff: 2048
+n_layers: 8
+max_seq_len: 256
+dropout: 0.1
+use_amp: true
+checkpoint_every: 1
+patience: 5
+num_workers: 2
+persistent_workers: false
+prefetch_factor: 2
+log_every_steps: 200
