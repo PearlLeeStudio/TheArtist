@@ -1,0 +1,30 @@
+# Phase 0 base + Full FT, target genre: folk
+# F1 base justification ablation — tests whether F1's jazz harmony content
+# (vs Phase 0's pop-only narrow vocab) actually matters for full FT case.
+
+run_name: phase0_full_ft_folk
+
+base_checkpoint: checkpoints/phase0_pop_baseline/best.pt
+target_genre: folk
+sources: ["chordonomicon_folk"]
+
+d_model: 512
+n_heads: 8
+d_ff: 2048
+n_layers: 8
+max_seq_len: 256
+dropout: 0.1
+
+peft_method: full
+
+seed: 42
+
+epochs: 8
+batch_size: 32
+gradient_accumulation_steps: 2
+lr: 1.0e-5
+weight_decay: 0.01
+warmup_epochs: 1
+max_grad_norm: 1.0
+use_amp: true
+num_workers: 4

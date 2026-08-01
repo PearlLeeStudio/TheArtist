@@ -1,0 +1,29 @@
+# Multi-seed Full FT on F1 base, target genre: rock, seed: 7
+# Adds statistical defensibility to the §6.2 PEFT comparison Full FT column.
+
+run_name: ft_f1_full_ft_rock_seed7
+
+base_checkpoint: checkpoints/ft_jazz_pop80/best.pt
+target_genre: rock
+sources: ["chordonomicon_rock"]
+
+d_model: 512
+n_heads: 8
+d_ff: 2048
+n_layers: 8
+max_seq_len: 256
+dropout: 0.1
+
+peft_method: full
+
+seed: 7
+
+epochs: 8
+batch_size: 32
+gradient_accumulation_steps: 2
+lr: 1.0e-5
+weight_decay: 0.01
+warmup_epochs: 1
+max_grad_norm: 1.0
+use_amp: true
+num_workers: 4

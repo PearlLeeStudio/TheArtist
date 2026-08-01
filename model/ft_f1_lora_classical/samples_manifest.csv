@@ -1,0 +1,3 @@
+filename,genre,model,rank,seed,prompt,length_bars,bpm,key,time_sig,variant,arranged
+samples/classical_lora.mid,classical,F1 + LoRA (classical),64,42,Cmaj-Cmaj|Cmaj-Cmaj|Cmaj-Cmaj|Cmaj-Cmaj|Cmaj-Cmaj|Cmaj-Cmaj|Cmaj-Cmaj|Cmaj-Cmaj,8,80,C major,4/4,lora_arranged,yes
+samples/classical_chord_only.mid,classical,F1 + LoRA (classical),64,42,Cmaj-Cmaj|Cmaj-Cmaj|Cmaj-Cmaj|Cmaj-Cmaj|Cmaj-Cmaj|Cmaj-Cmaj|Cmaj-Cmaj|Cmaj-Cmaj,8,80,C major,4/4,lora_chord_only,no

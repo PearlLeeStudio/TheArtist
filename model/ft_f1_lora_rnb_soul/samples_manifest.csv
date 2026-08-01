@@ -1,0 +1,3 @@
+filename,genre,model,rank,seed,prompt,length_bars,bpm,key,time_sig,variant,arranged
+samples/rnb_soul_lora.mid,rnb_soul,F1 + LoRA (rnb_soul),4,42,Fmaj-Bbmaj|Fmaj-Bbmaj|Fmaj-Bbmaj|Fmaj-Bbmaj|Fmaj-Bbmaj|Fmaj-Bbmaj|Fmaj-Bbmaj|Fmaj-Bbmaj,8,90,Bb major,4/4,lora_arranged,yes
+samples/rnb_soul_chord_only.mid,rnb_soul,F1 + LoRA (rnb_soul),4,42,Fmaj-Bbmaj|Fmaj-Bbmaj|Fmaj-Bbmaj|Fmaj-Bbmaj|Fmaj-Bbmaj|Fmaj-Bbmaj|Fmaj-Bbmaj|Fmaj-Bbmaj,8,90,Bb major,4/4,lora_chord_only,no

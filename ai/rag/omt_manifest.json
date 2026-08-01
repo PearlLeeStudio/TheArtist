@@ -1,0 +1,130 @@
+{
+  "edition": "Open Music Theory — original GitHub edition (selected prose)",
+  "authors": [
+    "Kris Shaffer",
+    "Bryn Hughes",
+    "Brian Moseley"
+  ],
+  "editors": [
+    "Robin Wharton",
+    "Kris Shaffer"
+  ],
+  "copyright": "© 2022 Hybrid Pedagogy Publishing",
+  "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+  "pages": [
+    {
+      "url": "https://openmusictheory.github.io/harmonicFunctions.html",
+      "title": "Harmonic functions",
+      "paragraphs": [
+        "75f5f880cd914d89ef12358617f992ea9f5a325eac713325ff24d6cec0a03b67",
+        "900da650f5d064ee0e13fb7e0dd3e95787ac221f6bd21dd4e0181d332d3aa35b",
+        "117474f1aa9dc4d30f129f30f633ce495f4cce86d196c3e93b1fab8a6b2f3ea7"
+      ],
+      "sections": {
+        "75f5f880cd914d89ef12358617f992ea9f5a325eac713325ff24d6cec0a03b67": "",
+        "900da650f5d064ee0e13fb7e0dd3e95787ac221f6bd21dd4e0181d332d3aa35b": "",
+        "117474f1aa9dc4d30f129f30f633ce495f4cce86d196c3e93b1fab8a6b2f3ea7": "The three common-practice harmonic functions"
+      }
+    },
+    {
+      "url": "https://openmusictheory.github.io/harmonicSyntax1.html",
+      "title": "Harmonic syntax — the idealized phrase",
+      "paragraphs": [
+        "3541b032837bf287c9336e7763cdca51330123fcb45c653aa5319cd8678ced09",
+        "3eefc57b26a950faf85eed44f529134c7884548b51d7606314539c5394c175e5",
+        "10160cdb1b4067a080754611a0e4a29ee10ae5bc9ec8b70cc4a19e9740b37e8c",
+        "1fce6d4cfabdcc52dad1a8622f541f99d53f0b7919f1dfec66db3a6e880d79c4"
+      ],
+      "sections": {
+        "3541b032837bf287c9336e7763cdca51330123fcb45c653aa5319cd8678ced09": "",
+        "3eefc57b26a950faf85eed44f529134c7884548b51d7606314539c5394c175e5": "",
+        "10160cdb1b4067a080754611a0e4a29ee10ae5bc9ec8b70cc4a19e9740b37e8c": "The idealized phrase",
+        "1fce6d4cfabdcc52dad1a8622f541f99d53f0b7919f1dfec66db3a6e880d79c4": "The idealized phrase"
+      }
+    },
+    {
+      "url": "https://openmusictheory.github.io/harmonicSyntax2.html",
+      "title": "Harmonic syntax — prolongation",
+      "paragraphs": [
+        "25a0a9bc2db3699eba00dfc84a91f0d5ff377d3a6aa9127d692f7cd14f1c690c",
+        "bf00e4b40de599f1d22f7ef62721c369637e84a4828bce93df2ae9ee677f6595",
+        "8abff558670825635aabbec77b777b970d74730af7fcffd124672abe3e8c681d",
+        "aed6e9ea205655a8af779a1387f372e71153c153bae2b760dedf7017fc871ec0",
+        "717594dd62bdd1db338ce3c9affaaf4ea88c7d937ff88635c65e6120e30c66e1"
+      ],
+      "sections": {
+        "25a0a9bc2db3699eba00dfc84a91f0d5ff377d3a6aa9127d692f7cd14f1c690c": "Change-of-figure prolongation",
+        "bf00e4b40de599f1d22f7ef62721c369637e84a4828bce93df2ae9ee677f6595": "Change-of-bass prolongation",
+        "8abff558670825635aabbec77b777b970d74730af7fcffd124672abe3e8c681d": "Contrapuntal prolongation – passing chord",
+        "aed6e9ea205655a8af779a1387f372e71153c153bae2b760dedf7017fc871ec0": "Contrapuntal prolongation – passing chord",
+        "717594dd62bdd1db338ce3c9affaaf4ea88c7d937ff88635c65e6120e30c66e1": "Plagal progressions"
+      }
+    },
+    {
+      "url": "https://openmusictheory.github.io/cadenceTypes.html",
+      "title": "Classical cadence types",
+      "paragraphs": [
+        "848d3b20fe2b478e8dc9b54dc3ffc646d9e22e02858b62249c7397b5e8c9d393",
+        "1dad46a9f3da59d78879c01929766080d2ddb219bfd2bbade1bcc16ec5b8798a",
+        "56a6e3a1c2040babd202811c9049e285cd331562f5ddb4824c3bf9bd7735003a"
+      ],
+      "sections": {
+        "848d3b20fe2b478e8dc9b54dc3ffc646d9e22e02858b62249c7397b5e8c9d393": "",
+        "1dad46a9f3da59d78879c01929766080d2ddb219bfd2bbade1bcc16ec5b8798a": "Authentic and half cadences",
+        "56a6e3a1c2040babd202811c9049e285cd331562f5ddb4824c3bf9bd7735003a": "Authentic and half cadences"
+      }
+    },
+    {
+      "url": "https://openmusictheory.github.io/appliedChords.html",
+      "title": "Applied chords",
+      "paragraphs": [
+        "39c38510b1b9225a045e1430db37ac057331634a32a8242fee6950f53f9d2123",
+        "fbb3aaedb5b937ccb0756ce9347df5cc76860c1abeabfeaa579c4921ef821ccc",
+        "a00a52ffcb0df97b196b05bffd18c519b69342443cef47b0efbf78faaf8bb0f7",
+        "e9135d15fe5b70e69eff228cec543045136c1a5c1d1659dad0b27fa66c359e96",
+        "5a8bf0e40a33d3ba08d0d77e270ae36ff0b6140a62457a6956e1dc3848b727c9",
+        "cb909c62d57801fdb44feb9fb210484b8f1a54c584bfd7533e17fb493c4889c1"
+      ],
+      "sections": {
+        "39c38510b1b9225a045e1430db37ac057331634a32a8242fee6950f53f9d2123": "",
+        "fbb3aaedb5b937ccb0756ce9347df5cc76860c1abeabfeaa579c4921ef821ccc": "",
+        "a00a52ffcb0df97b196b05bffd18c519b69342443cef47b0efbf78faaf8bb0f7": "",
+        "e9135d15fe5b70e69eff228cec543045136c1a5c1d1659dad0b27fa66c359e96": "Analytical notation",
+        "5a8bf0e40a33d3ba08d0d77e270ae36ff0b6140a62457a6956e1dc3848b727c9": "Functional dissonances in applied chords",
+        "cb909c62d57801fdb44feb9fb210484b8f1a54c584bfd7533e17fb493c4889c1": "Functional dissonances in applied chords"
+      }
+    },
+    {
+      "url": "https://openmusictheory.github.io/modalMixture.html",
+      "title": "Modal mixture",
+      "paragraphs": [
+        "6a85df4fa41a16f1c3a37a17aa54ed09443267ff8865bd0b70955278fe1b5ad3",
+        "4fc6545d5057d48668ff460b44238987b17d066be19aed1c44c468063a255570",
+        "2739e4373e3f2bee2402678920c2c6eeb1529860913c1e4f49bc49b18af6e8ad"
+      ],
+      "sections": {
+        "6a85df4fa41a16f1c3a37a17aa54ed09443267ff8865bd0b70955278fe1b5ad3": "",
+        "4fc6545d5057d48668ff460b44238987b17d066be19aed1c44c468063a255570": "",
+        "2739e4373e3f2bee2402678920c2c6eeb1529860913c1e4f49bc49b18af6e8ad": "Roman numeral notation"
+      }
+    },
+    {
+      "url": "https://openmusictheory.github.io/popRockHarmony.html",
+      "title": "Harmony in pop/rock music",
+      "paragraphs": [
+        "135044b2d90277208b470e0d727bf6e6217cf72edb2e8fd32a7049af65355392",
+        "2248b574c7e1196c0b3311148e425532f30832824f226ee182d998b40041950b",
+        "de5b77bbe9f666eee179be4bbd951ad80252bfd033fc54111b410abb7e60ca31",
+        "ba156cd4ce0f27a4a8269a37616d96845b4455e1db785dd62ecc85571dde1975",
+        "1e655b20ed712528b40e0fe1e69b0317a6fd81c5f1b9af787fbf01b902b66bc1"
+      ],
+      "sections": {
+        "135044b2d90277208b470e0d727bf6e6217cf72edb2e8fd32a7049af65355392": "",
+        "2248b574c7e1196c0b3311148e425532f30832824f226ee182d998b40041950b": "Schemata",
+        "de5b77bbe9f666eee179be4bbd951ad80252bfd033fc54111b410abb7e60ca31": "Rock’s “tonal systems”",
+        "ba156cd4ce0f27a4a8269a37616d96845b4455e1db785dd62ecc85571dde1975": "Rock’s “tonal systems”",
+        "1e655b20ed712528b40e0fe1e69b0317a6fd81c5f1b9af787fbf01b902b66bc1": "Rock’s “tonal systems”"
+      }
+    }
+  ]
+}

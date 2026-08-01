@@ -1,0 +1,80 @@
+# Shorter 2-bar genre-specific prompts. The longer 4-bar setups in
+# workshop_prompts.yaml encourage the model to repeat the loop; these
+# 2-bar setups leave more room for divergence between F1-base and F1+LoRA.
+
+- name: blues_short
+  song:
+    key: Bbmaj
+    time_signature: "4/4"
+    genre: blues
+    bars: [["Bb7"], ["Eb7"]]
+
+- name: bossa_short
+  song:
+    key: Fmaj
+    time_signature: "4/4"
+    genre: bossa
+    bars: [["Fmaj7"], ["Gm7"]]
+
+- name: classical_short
+  song:
+    key: Cmaj
+    time_signature: "4/4"
+    genre: classical
+    bars: [["Cmaj"], ["Fmaj"]]
+
+- name: country_short
+  song:
+    key: Gmaj
+    time_signature: "4/4"
+    genre: country
+    bars: [["Gmaj"], ["Cmaj"]]
+
+- name: electronic_short
+  song:
+    key: Amin
+    time_signature: "4/4"
+    genre: electronic
+    bars: [["Am"], ["Fmaj"]]
+
+- name: folk_short
+  song:
+    key: Dmaj
+    time_signature: "4/4"
+    genre: folk
+    bars: [["Dmaj"], ["Gmaj"]]
+
+- name: funk_short
+  song:
+    key: Emin
+    time_signature: "4/4"
+    genre: funk
+    bars: [["Em7"], ["A7"]]
+
+- name: gospel_short
+  song:
+    key: Fmaj
+    time_signature: "4/4"
+    genre: gospel
+    bars: [["Fmaj"], ["Dm"]]
+
+- name: hip_hop_short
+  song:
+    key: Dmin
+    time_signature: "4/4"
+    genre: hip_hop
+    bars: [["Dm"], ["Bbmaj"]]
+
+- name: rnb_soul_short
+  song:
+    key: Cmaj
+    time_signature: "4/4"
+    genre: rnb_soul
+    bars: [["Cmaj7"], ["Am7"]]
+
+- name: rock_short
+  song:
+    key: Emin
+    time_signature: "4/4"
+    genre: rock
+    bars: [["Em"], ["Cmaj"]]

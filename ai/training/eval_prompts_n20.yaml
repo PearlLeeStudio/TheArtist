@@ -1,0 +1,148 @@
+# N=20 evaluation prompt set for the author blind-pairwise-ranking
+# validation step (theory_coherence_metric.md §5). Covers jazz (10),
+# pop (6), and edge cases (4). Mix of keys and time signatures to
+# avoid key-invariance illusion. Each prompt gives the model 2-4 bars
+# of context so it has to continue, not repeat the seed.
+
+# ------------------------- Jazz (10) -------------------------
+- name: jazz_ii_V_I_major
+  song:
+    key: Cmaj
+    time_signature: "4/4"
+    genre: jazz
+    bars: [["Dm7", "G7"], ["Cmaj7"]]
+
+- name: jazz_ii_V_i_minor
+  song:
+    key: Amin
+    time_signature: "4/4"
+    genre: jazz
+    bars: [["Bm7b5", "E7"], ["Am7"]]
+
+- name: jazz_turnaround_Bb
+  song:
+    key: Bbmaj
+    time_signature: "4/4"
+    genre: jazz
+    bars: [["Bbmaj7", "G7"], ["Cm7", "F7"]]
+
+- name: jazz_iii_VI_ii_V
+  song:
+    key: Cmaj
+    time_signature: "4/4"
+    genre: jazz
+    bars: [["Em7", "A7"], ["Dm7", "G7"]]
+
+- name: jazz_modal_dorian
+  song:
+    key: Dmin
+    time_signature: "4/4"
+    genre: jazz
+    bars: [["Dm7", "Gmaj"], ["Dm7", "Gmaj"]]
+
+- name: jazz_tritone_sub
+  song:
+    key: Cmaj
+    time_signature: "4/4"
+    genre: jazz
+    bars: [["Dm7", "Db7"], ["Cmaj7"]]
+
+- name: jazz_rhythm_changes_A
+  song:
+    key: Bbmaj
+    time_signature: "4/4"
+    genre: jazz
+    bars: [["Bbmaj7", "G7"], ["Cm7", "F7"], ["Dm7", "G7"], ["Cm7", "F7"]]
+
+- name: jazz_coltrane_cycle
+  song:
+    key: Bmaj
+    time_signature: "4/4"
+    genre: jazz
+    bars: [["Bmaj7", "D7"], ["Gmaj7", "Bb7"]]
+
+- name: jazz_reharm_autumn
+  song:
+    key: Gmin
+    time_signature: "4/4"
+    genre: jazz
+    bars: [["Cm7", "F7"], ["Bbmaj7", "Ebmaj7"]]
+
+- name: jazz_ballad_open
+  song:
+    key: Fmaj
+    time_signature: "4/4"
+    genre: jazz
+    bars: [["Fmaj7", "Am7"], ["Gm7", "C7"]]
+
+# ------------------------- Pop (6) -------------------------
+- name: pop_basic_I_vi_ii_V
+  song:
+    key: Cmaj
+    time_signature: "4/4"
+    genre: pop
+    bars: [["C", "Am"], ["Dm", "G"]]
+
+- name: pop_rock_progression
+  song:
+    key: Gmaj
+    time_signature: "4/4"
+    genre: rock
+    bars: [["G", "D"], ["Em", "C"]]
+
+- name: pop_mixolydian
+  song:
+    key: Gmaj
+    time_signature: "4/4"
+    genre: rock
+    bars: [["G", "F"], ["C", "G"]]
+
+- name: pop_doo_wop_50s
+  song:
+    key: Cmaj
+    time_signature: "4/4"
+    genre: pop
+    bars: [["C", "Am"], ["F", "G"]]
+
+- name: pop_ballad_slow
+  song:
+    key: Dmaj
+    time_signature: "4/4"
+    genre: pop
+    bars: [["Dmaj7", "Bm7"], ["Gmaj7", "A7sus4"]]
+
+- name: pop_axis_vi_IV_I_V
+  song:
+    key: Cmaj
+    time_signature: "4/4"
+    genre: pop
+    bars: [["Am", "F"], ["C", "G"]]
+
+# ------------------------- Edge cases (4) -------------------------
+- name: edge_modal_interchange_major
+  song:
+    key: Cmaj
+    time_signature: "4/4"
+    genre: jazz
+    bars: [["Cmaj7", "Ab"], ["Bb", "Cmaj7"]]
+
+- name: edge_deceptive_cadence
+  song:
+    key: Cmaj
+    time_signature: "4/4"
+    genre: jazz
+    bars: [["Dm7", "G7"], ["Am7"]]
+
+- name: edge_unusual_key_fsmin
+  song:
+    key: F#min
+    time_signature: "4/4"
+    genre: jazz
+    bars: [["F#m7", "B7"], ["Emaj7", "Amaj7"]]
+
+- name: edge_three_four_waltz
+  song:
+    key: Emin
+    time_signature: "3/4"
+    genre: jazz
+    bars: [["Em7", "Am7", "B7"], ["Em7"]]

@@ -1,0 +1,31 @@
+# LoRA fine-tune: F1 base + hip-hop adapter
+# ~14K from Chordonomicon main_genre rap + genres tag hip hop/trap.
+
+run_name: ft_f1_lora_hip_hop_r64_seed123
+
+base_checkpoint: checkpoints/ft_jazz_pop80/best.pt
+target_genre: hip_hop
+sources: ["chordonomicon_hip_hop"]
+
+d_model: 512
+n_heads: 8
+d_ff: 2048
+n_layers: 8
+max_seq_len: 256
+dropout: 0.1
+
+lora_r: 64
+lora_alpha: 128
+lora_dropout: 0.05
+lora_target_modules: ["w_q", "w_k", "w_v"]
+
+epochs: 5
+batch_size: 32
+gradient_accumulation_steps: 2
+lr: 3.0e-4
+weight_decay: 0.01
+warmup_epochs: 1
+max_grad_norm: 1.0
+use_amp: true
+num_workers: 4
+seed: 123

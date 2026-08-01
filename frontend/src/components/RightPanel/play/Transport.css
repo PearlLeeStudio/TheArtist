@@ -1,0 +1,95 @@
+.te-transport {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  flex-shrink: 0;
+  gap: 6px;
+  width: 100%;
+  min-width: 0;
+  min-height: 42px;
+}
+
+.te-transport > .operation-progress,
+.te-transport > [role='alert'] { flex-basis: 100%; }
+
+.te-transport__keys {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  flex: 1;
+  gap: 1px;
+  min-width: 0;
+}
+
+.te-transport .te-transport__key {
+  border: 1px solid transparent;
+  border-radius: 1px;
+  background: #171717;
+  color: #f4f4f2;
+  box-shadow: inset 0 2px 4px rgb(0 0 0 / 85%),
+              inset 0 -1px 0 rgb(255 255 255 / 17%),
+              0 1px 0 rgb(255 255 255 / 8%);
+}
+
+.te-transport .te-transport__key:hover {
+  background: #242424;
+  color: #fff;
+  transform: none;
+  filter: none;
+}
+
+.te-transport .te-transport__key:active {
+  background: #111;
+  box-shadow: inset 0 1px 2px rgb(0 0 0 / 55%);
+  transform: translateY(1px);
+}
+
+.te-transport .te-transport__key[data-active] {
+  background: #2b2b2b;
+  color: #fff;
+  box-shadow: inset 0 2px 4px rgb(0 0 0 / 85%), inset 0 -1px 0 rgb(255 255 255 / 24%);
+}
+
+.te-transport[data-playing='true'] .te-transport__key--play {
+  background: #242424;
+  color: #fff;
+}
+
+.te-transport .te-transport__key:focus-visible {
+  outline: 1.5px solid #626262;
+  outline-offset: 2px;
+}
+
+.te-transport .te-transport__key:disabled {
+  opacity: .35;
+  cursor: default;
+}
+
+.te-transport__disc {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 27px;
+  box-sizing: border-box;
+  width: 27px;
+  height: 27px;
+  font-size: 27px;
+  line-height: 27px;
+  user-select: none;
+  animation: te-transport-disc-spin 3.6s linear infinite;
+  animation-play-state: paused;
+}
+
+.te-transport[data-playing='true'] .te-transport__disc {
+  animation-play-state: running;
+}
+
+@keyframes te-transport-disc-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .te-transport__disc {
+    animation: none;
+  }
+}

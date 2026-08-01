@@ -1,0 +1,25 @@
+filename,genre,model,rank,seed,prompt,length_bars,bpm,key,time_sig,variant,arranged
+jazz_f1.mid,jazz,F1 (ft_jazz_pop80),-,42,Fmaj-Bbmaj|Fmaj-Bbmaj|Fmaj-Bbmaj|Fmaj-Bbmaj|Fmaj-Bbmaj|Fmaj-Bbmaj|Fmaj-Bbmaj|Fmaj-Bbmaj,8,110,F major,4/4,f1_arranged,yes
+pop_f1.mid,pop,F1 (ft_jazz_pop80),-,42,Gmaj-Cmaj|Gmaj-Cmaj|Gmaj-Cmaj|Gmaj-Cmaj|Gmaj-Cmaj|Gmaj-Cmaj|Gmaj-Cmaj|Gmaj-Cmaj,8,110,C major,4/4,f1_arranged,yes
+blues_f1.mid,blues,F1 (ft_jazz_pop80),-,42,Bmaj-Bmaj|Bmaj-Bmaj|Bmaj-Bmaj|Bmaj-Bmaj|Bmaj-Bmaj|Bmaj-Bmaj|Bmaj-Bmaj|Bmaj-Bmaj,8,90,E major,4/4,f1_arranged,yes
+blues_lora.mid,blues,F1 + LoRA (blues),32,42,Bmaj-Emaj|Bmaj-Emaj|Bmaj-Emaj|Bmaj-Emaj|Bmaj-Emaj|Bmaj-Emaj|Bmaj-Emaj|Bmaj-Emaj,8,90,E major,4/4,lora_arranged,yes
+bossa_f1.mid,bossa,F1 (ft_jazz_pop80),-,42,Cmaj-Cmaj|Cmaj-Cmaj|Cmaj-Cmaj|Cmaj-Cmaj|Cmaj-Cmaj|Cmaj-Cmaj|Cmaj-Cmaj|Cmaj-Cmaj,8,110,F major,4/4,f1_arranged,yes
+bossa_lora.mid,bossa,F1 + LoRA (bossa),16,42,Cmaj-Gmaj|Am-Fmaj|Cmaj-Gmaj|Am-Fmaj|Cmaj-Gmaj|Am-Fmaj|Cmaj-Gmaj|Am-Fmaj,8,110,F major,4/4,lora_arranged,yes
+classical_f1.mid,classical,F1 (ft_jazz_pop80),-,42,Gmaj-Gmaj|Gmaj-Gmaj|Gmaj-Gmaj|Gmaj-Gmaj|Gmaj-Gmaj|Gmaj-Gmaj|Gmaj-Gmaj|Gmaj-Gmaj,8,80,C major,4/4,f1_arranged,yes
+classical_lora.mid,classical,F1 + LoRA (classical),64,42,Cmaj-Cmaj|Cmaj-Cmaj|Cmaj-Cmaj|Cmaj-Cmaj|Cmaj-Cmaj|Cmaj-Cmaj|Cmaj-Cmaj|Cmaj-Cmaj,8,80,C major,4/4,lora_arranged,yes
+country_f1.mid,country,F1 (ft_jazz_pop80),-,42,Dmaj-Dmaj|Dmaj-Dmaj|Dmaj-Dmaj|Dmaj-Dmaj|Dmaj-Dmaj|Dmaj-Dmaj|Dmaj-Dmaj|Dmaj-Dmaj,8,100,G major,4/4,f1_arranged,yes
+country_lora.mid,country,F1 + LoRA (country),4,42,Dmaj-Gmaj|Dmaj-Gmaj|Dmaj-Gmaj|Dmaj-Gmaj|Dmaj-Gmaj|Dmaj-Gmaj|Dmaj-Gmaj|Dmaj-Gmaj,8,100,G major,4/4,lora_arranged,yes
+electronic_f1.mid,electronic,F1 (ft_jazz_pop80),-,42,Bmaj7-Bmaj7|Bmaj7-Bmaj7|Bmaj7-Bmaj7|Bmaj7-Bmaj7|Bmaj7-Bmaj7|Bmaj7-Bmaj7|Bmaj7-Bmaj7|Bmaj7-Bmaj7,8,128,A minor,4/4,f1_arranged,yes
+electronic_lora.mid,electronic,F1 + LoRA (electronic),8,42,Bmaj-F#maj|Abm-Emaj|Bmaj-F#maj|Abm-Emaj|Bmaj-F#maj|Abm-Emaj|Bmaj-F#maj|Abm-Emaj,8,128,A minor,4/4,lora_arranged,yes
+folk_f1.mid,folk,F1 (ft_jazz_pop80),-,42,Dmaj-Dmaj|Dmaj-Dmaj|Dmaj-Dmaj|Dmaj-Dmaj|Dmaj-Dmaj|Dmaj-Dmaj|Dmaj-Dmaj|Dmaj-Dmaj,8,100,G major,4/4,f1_arranged,yes
+folk_lora.mid,folk,F1 + LoRA (folk),32,42,Dmaj-Gmaj|Dmaj-Gmaj|Dmaj-Gmaj|Dmaj-Gmaj|Dmaj-Gmaj|Dmaj-Gmaj|Dmaj-Gmaj|Dmaj-Gmaj,8,100,G major,4/4,lora_arranged,yes
+funk_f1.mid,funk,F1 (ft_jazz_pop80),-,42,Cmaj-Cmaj|Cmaj-Cmaj|Cmaj-Cmaj|Cmaj-Cmaj|Cmaj-Cmaj|Cmaj-Cmaj|Cmaj-Cmaj|Cmaj-Cmaj,8,110,F major,4/4,f1_arranged,yes
+funk_lora.mid,funk,F1 + LoRA (funk),64,42,Cmaj-Fmaj|Cmaj-Fmaj|Cmaj-Fmaj|Cmaj-Fmaj|Cmaj-Fmaj|Cmaj-Fmaj|Cmaj-Fmaj|Cmaj-Fmaj,8,110,F major,4/4,lora_arranged,yes
+gospel_f1.mid,gospel,F1 (ft_jazz_pop80),-,42,Cmaj-Cmaj|Cmaj-Cmaj|Cmaj-Cmaj|Cmaj-Cmaj|Cmaj-Cmaj|Cmaj-Cmaj|Cmaj-Cmaj|Cmaj-Cmaj,8,90,F major,4/4,f1_arranged,yes
+gospel_lora.mid,gospel,F1 + LoRA (gospel),4,42,Cmaj-Fmaj|Cmaj-Fmaj|Cmaj-Fmaj|Cmaj-Fmaj|Cmaj-Fmaj|Cmaj-Fmaj|Cmaj-Fmaj|Cmaj-Fmaj,8,90,F major,4/4,lora_arranged,yes
+hip_hop_f1.mid,hip_hop,F1 (ft_jazz_pop80),-,42,Bmaj7-Bmaj7|Bmaj7-Bmaj7|Bmaj7-Bmaj7|Bmaj7-Bmaj7|Bmaj7-Bmaj7|Bmaj7-Bmaj7|Bmaj7-Bmaj7|Bmaj7-Bmaj7,8,90,A minor,4/4,f1_arranged,yes
+hip_hop_lora.mid,hip_hop,F1 + LoRA (hip_hop),4,42,Dbm-Amaj|Emaj-Bmaj|Dbm-Amaj|Emaj-Bmaj|Dbm-Amaj|Emaj-Bmaj|Dbm-Amaj|Emaj-Bmaj,8,90,A minor,4/4,lora_arranged,yes
+rnb_soul_f1.mid,rnb_soul,F1 (ft_jazz_pop80),-,42,Fmaj-Fmaj|Fmaj-Fmaj|Fmaj-Fmaj|Fmaj-Fmaj|Fmaj-Fmaj|Fmaj-Fmaj|Fmaj-Fmaj|Fmaj-Fmaj,8,90,Bb major,4/4,f1_arranged,yes
+rnb_soul_lora.mid,rnb_soul,F1 + LoRA (rnb_soul),4,42,Fmaj-Bbmaj|Fmaj-Bbmaj|Fmaj-Bbmaj|Fmaj-Bbmaj|Fmaj-Bbmaj|Fmaj-Bbmaj|Fmaj-Bbmaj|Fmaj-Bbmaj,8,90,Bb major,4/4,lora_arranged,yes
+rock_f1.mid,rock,F1 (ft_jazz_pop80),-,42,Bmaj-Emaj|Bmaj-Emaj|Bmaj-Emaj|Bmaj-Emaj|Bmaj-Emaj|Bmaj-Emaj|Bmaj-Emaj|Bmaj-Emaj,8,120,E major,4/4,f1_arranged,yes
+rock_lora.mid,rock,F1 + LoRA (rock),16,42,Bmaj-Emaj|Bmaj-Emaj|Bmaj-Emaj|Bmaj-Emaj|Bmaj-Emaj|Bmaj-Emaj|Bmaj-Emaj|Bmaj-Emaj,8,120,E major,4/4,lora_arranged,yes

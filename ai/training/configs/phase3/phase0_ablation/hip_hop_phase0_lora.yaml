@@ -1,0 +1,33 @@
+# E3 Phase 0 + LoRA: F1 base justification ablation (LoRA case).
+# Same as B3_lora_seed42 but starting from Phase 0 instead of F1.
+
+run_name: phase0_lora_hip_hop
+
+base_checkpoint: checkpoints/phase0_pop_baseline/best.pt
+target_genre: hip_hop
+sources: ["chordonomicon_hip_hop"]
+
+peft_method: lora
+lora_r: 4
+lora_alpha: 8
+lora_dropout: 0.05
+lora_target_modules: ["w_q", "w_k", "w_v"]
+
+seed: 42
+
+d_model: 512
+n_heads: 8
+d_ff: 2048
+n_layers: 8
+max_seq_len: 256
+dropout: 0.1
+
+epochs: 8
+batch_size: 32
+gradient_accumulation_steps: 2
+lr: 3.0e-04
+weight_decay: 0.01
+warmup_epochs: 1
+max_grad_norm: 1.0
+use_amp: true
+num_workers: 4

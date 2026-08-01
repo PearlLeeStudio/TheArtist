@@ -1,0 +1,34 @@
+cff-version: 1.2.0
+message: "If you use TheArtist or its released checkpoints, please cite the technical report below."
+type: software
+title: "TheArtist: AI Chord Composition Tool"
+authors:
+  - family-names: Lee
+    given-names: Jinju
+license: MIT
+repository-code: "https://github.com/PearlLeeStudio/TheArtist"
+url: "https://huggingface.co/PearlLeeStudio"
+preferred-citation:
+  type: article
+  title: "How Far Can Chord-Symbol Time-Series Adaptation Carry Genre Identity?"
+  authors:
+    - family-names: Lee
+      given-names: Jinju
+  year: 2026
+  url: "https://arxiv.org/abs/2606.07334"
+  identifiers:
+    - type: other
+      value: "arXiv:2606.07334"
+      description: "arXiv preprint"
+references:
+  - type: article
+    title: "Empirical Study of Pop and Jazz Mix Ratios for Genre-Adaptive Chord Generation"
+    authors:
+      - family-names: Lee
+        given-names: Jinju
+    year: 2026
+    url: "https://arxiv.org/abs/2605.04998"
+    identifiers:
+      - type: other
+        value: "arXiv:2605.04998"
+        description: "arXiv preprint"

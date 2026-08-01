@@ -1,0 +1,34 @@
+Drum samples extracted from DrumGizmo Aasimonster v2.1, originally
+recorded by aasimonster (2015), distributed via drumgizmo.org.
+
+Source: https://drumgizmo.org/kits/Aasimonster/aasimonster2_1.zip
+Wiki:   https://www.drumgizmo.org/wiki/doku.php?id=kits:the_aasimonster
+License: GNU General Public License v3.0 (GPL3)
+        https://www.gnu.org/licenses/gpl-3.0.html
+
+GPL3 is viral. TheArtist is non-commercial portfolio + paper + demo
+only, so the viral implication is acceptable for these audio assets.
+
+Each FLAC below is the close-mic stereo channel(s) for the voice plus a
+small admixture (0.20-0.40) of the Amb L+R room ambience for natural
+depth. Source upstream files are 16-channel WAV (1 mic per channel)
+with multiple velocity layers per voice; we picked ~85% velocity layer
+per voice for portfolio-grade punch without harshness.
+
+Channel mapping (Aasimonster XML convention) used per voice:
+  kick           kick_l/26-kick_l.wav           ch Kick L+R + 0.30·Amb
+  snare          snare_on_center/79-…           ch Snare top+bottom + 0.30·Amb
+  sidestick      snare_rim_shot/15-…            ch Snare top+bottom (45% vel, soft)
+  hihat-closed   hihat_closed1/16-…             ch Hihat (mono→stereo) + 0.20·Amb
+  hihat-open     hihat_open/19-…                ch Hihat + 0.25·Amb
+  ride           ride/15-ride.wav               ch Ride + 0.30·Amb
+  crash          crash1/15-crash1.wav           ch OH L+R (overheads) + 0.40·Amb
+  china          china_18_inch/17-…             ch OH L+R + 0.35·Amb
+  tom-hi         tom_1/19-tom_1.wav             ch Tom1 + 0.30·Amb
+  tom-mid        tom_2/20-tom_2.wav             ch Tom2 + 0.30·Amb
+  tom-lo         tom_4/20-tom_4.wav             ch Tom4 (floor) + 0.35·Amb
+
+
+Previous attribution (replaced): MuldjordKit (FreePats edition),
+Lars Muldjord, CC BY 4.0. Switched to Aasimonster for recording quality;
+MuldjordKit is single-mic, Aasimonster is multi-mic close + ambience.

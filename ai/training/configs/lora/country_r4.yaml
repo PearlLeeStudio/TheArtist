@@ -1,0 +1,41 @@
+# LoRA fine-tune: F1 base + country adapter
+# Pearl 2026-05-09 — first LoRA proof-of-concept (country has 62K from Chordonomicon main_genre)
+#
+# Pre-req: 1) `cd ai && uv sync` (peft 설치)
+#          2) `uv run python training/extract_genre_subsets.py --genres country --merge`
+#
+# Run:
+#   cd ai
+#   uv run python training/lora_train.py --config training/configs/lora/country.yaml
+
+run_name: ft_f1_lora_country_r4
+
+# Base & target
+base_checkpoint: checkpoints/ft_jazz_pop80/best.pt
+target_genre: country
+sources: ["chordonomicon_country"]
+
+# Architecture (must match F1 base)
+d_model: 512
+n_heads: 8
+d_ff: 2048
+n_layers: 8
+max_seq_len: 256
+dropout: 0.1
+
+# LoRA
+lora_r: 4
+lora_alpha: 8
+lora_dropout: 0.05
+lora_target_modules: ["w_q", "w_k", "w_v"]
+
+# Training
+epochs: 8
+batch_size: 32
+gradient_accumulation_steps: 2
+lr: 3.0e-4
+weight_decay: 0.01
+warmup_epochs: 1
+max_grad_norm: 1.0
+use_amp: true
+num_workers: 4

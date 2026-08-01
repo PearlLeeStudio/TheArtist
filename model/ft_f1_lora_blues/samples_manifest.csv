@@ -1,0 +1,3 @@
+filename,genre,model,rank,seed,prompt,length_bars,bpm,key,time_sig,variant,arranged
+samples/blues_lora.mid,blues,F1 + LoRA (blues),32,42,Bmaj-Emaj|Bmaj-Emaj|Bmaj-Emaj|Bmaj-Emaj|Bmaj-Emaj|Bmaj-Emaj|Bmaj-Emaj|Bmaj-Emaj,8,90,E major,4/4,lora_arranged,yes
+samples/blues_chord_only.mid,blues,F1 + LoRA (blues),32,42,Bmaj-Emaj|Bmaj-Emaj|Bmaj-Emaj|Bmaj-Emaj|Bmaj-Emaj|Bmaj-Emaj|Bmaj-Emaj|Bmaj-Emaj,8,90,E major,4/4,lora_chord_only,no
