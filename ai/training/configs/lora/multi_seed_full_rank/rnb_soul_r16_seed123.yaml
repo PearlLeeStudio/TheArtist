@@ -1,0 +1,32 @@
+# LoRA fine-tune: F1 base + R&B/soul adapter (combined per Pearl 2026-05-09)
+# ~12K from Chordonomicon main_genre soul + genres tag soul/r&b/motown/neo soul.
+# 학습 후 chord vocab 명확히 갈리면 split 검토.
+
+run_name: ft_f1_lora_rnb_soul_r16_seed123
+
+base_checkpoint: checkpoints/ft_jazz_pop80/best.pt
+target_genre: rnb_soul
+sources: ["chordonomicon_rnb_soul"]
+
+d_model: 512
+n_heads: 8
+d_ff: 2048
+n_layers: 8
+max_seq_len: 256
+dropout: 0.1
+
+lora_r: 16
+lora_alpha: 32
+lora_dropout: 0.05
+lora_target_modules: ["w_q", "w_k", "w_v"]
+
+epochs: 5
+batch_size: 32
+gradient_accumulation_steps: 2
+lr: 3.0e-4
+weight_decay: 0.01
+warmup_epochs: 1
+max_grad_norm: 1.0
+use_amp: true
+num_workers: 4
+seed: 123

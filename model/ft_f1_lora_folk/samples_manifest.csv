@@ -1,0 +1,3 @@
+filename,genre,model,rank,seed,prompt,length_bars,bpm,key,time_sig,variant,arranged
+samples/folk_lora.mid,folk,F1 + LoRA (folk),32,42,Dmaj-Gmaj|Dmaj-Gmaj|Dmaj-Gmaj|Dmaj-Gmaj|Dmaj-Gmaj|Dmaj-Gmaj|Dmaj-Gmaj|Dmaj-Gmaj,8,100,G major,4/4,lora_arranged,yes
+samples/folk_chord_only.mid,folk,F1 + LoRA (folk),32,42,Dmaj-Gmaj|Dmaj-Gmaj|Dmaj-Gmaj|Dmaj-Gmaj|Dmaj-Gmaj|Dmaj-Gmaj|Dmaj-Gmaj|Dmaj-Gmaj,8,100,G major,4/4,lora_chord_only,no

@@ -1,0 +1,33 @@
+# F1 retrain (v2, 2026-06-11) — identical recipe to ft_jazz_pop80.yaml except:
+#   select_best_on: jazz_val — best.pt selected on the jazz-only VAL subset.
+# Rationale: the original run's mixed (pop-dominated) val loss rose monotonically
+# during jazz fine-tuning, so min-val-loss retained the un-finetuned init as
+# "best" (released F1 == phase0 weights, verified by hash 2026-06-11). Selection
+# on jazz val restores the design intent (jazz-leaning base) without test leakage.
+# Trained on the rebuilt 6-source splits (gate-verified vs published: Δ=5.6e-5).
+run_name: ft_jazz_pop80_v2
+resume_from: checkpoints/phase0_pop_baseline/best.pt
+pop_mix_count: 10000
+select_best_on: jazz_val
+epochs: 10
+batch_size: 64
+gradient_accumulation_steps: 2
+lr: 2.0e-5
+weight_decay: 0.01
+warmup_epochs: 2
+max_grad_norm: 1.0
+d_model: 512
+n_heads: 8
+d_ff: 2048
+n_layers: 8
+max_seq_len: 256
+dropout: 0.1
+use_amp: true
+checkpoint_every: 1
+patience: 5
+# Reduced loader footprint for the CPU box (smoke run died silently under
+# peak concurrent load on 2026-06-11; compute is the bottleneck, not I/O).
+num_workers: 2
+persistent_workers: false
+prefetch_factor: 2
+log_every_steps: 200

@@ -1,0 +1,80 @@
+# Genre-specific prompts for the LoRA workshop paper qualitative analysis.
+# 11 prompts, one per LoRA genre. Short 4-chord setups in a genre-canonical key;
+# the model is asked to continue (max_new_tokens controls length).
+
+- name: blues_12bar_setup
+  song:
+    key: Bbmaj
+    time_signature: "4/4"
+    genre: blues
+    bars: [["Bb7"], ["Bb7"], ["Bb7"], ["Bb7"]]
+
+- name: bossa_im7_setup
+  song:
+    key: Fmaj
+    time_signature: "4/4"
+    genre: bossa
+    bars: [["Fmaj7"], ["Gm7"], ["Am7", "D7"], ["Gm7", "C7"]]
+
+- name: classical_picardy_setup
+  song:
+    key: Amin
+    time_signature: "4/4"
+    genre: classical
+    bars: [["Am"], ["Dm"], ["E7"], ["Am"]]
+
+- name: country_I_IV_V_setup
+  song:
+    key: Gmaj
+    time_signature: "4/4"
+    genre: country
+    bars: [["G"], ["C"], ["G"], ["D"]]
+
+- name: electronic_minor_loop
+  song:
+    key: Amin
+    time_signature: "4/4"
+    genre: electronic
+    bars: [["Am"], ["F"], ["C"], ["G"]]
+
+- name: folk_modal_setup
+  song:
+    key: Dmaj
+    time_signature: "4/4"
+    genre: folk
+    bars: [["D"], ["G"], ["A"], ["D"]]
+
+- name: funk_dom7_vamp
+  song:
+    key: Emin
+    time_signature: "4/4"
+    genre: funk
+    bars: [["Em7"], ["A7"], ["Em7"], ["A7"]]
+
+- name: gospel_I_vi_IV_V
+  song:
+    key: Fmaj
+    time_signature: "4/4"
+    genre: gospel
+    bars: [["F"], ["Dm"], ["Bb"], ["C"]]
+
+- name: hip_hop_minor_loop
+  song:
+    key: Dmin
+    time_signature: "4/4"
+    genre: hip_hop
+    bars: [["Dm"], ["Bb"], ["F"], ["C"]]
+
+- name: rnb_soul_iim7_V7
+  song:
+    key: Cmaj
+    time_signature: "4/4"
+    genre: rnb_soul
+    bars: [["Cmaj7"], ["Am7"], ["Dm7"], ["G7"]]
+
+- name: rock_power_progression
+  song:
+    key: Emin
+    time_signature: "4/4"
+    genre: rock
+    bars: [["Em"], ["C"], ["G"], ["D"]]

@@ -1,0 +1,480 @@
+@import "tailwindcss";
+
+/* ----------------------------------------------------------------
+   Medium-inspired editorial palette.
+   Light is the canonical look (white page, near-black serif body
+   text, muted greys, green accent). Dark mirrors the same neutral
+   palette without introducing a different mood.
+---------------------------------------------------------------- */
+
+:root {
+  /* Dark palette. Near-black page with a tight ladder above it for
+     panels / buttons / borders. Headings stay near-white (not pure)
+     to soften the contrast. Highlight colours (selection / playback /
+     accent) keep their saturation so they pop against the deep neutrals. */
+  --bg-primary:    #0a0a0a;     /* page — near-black */
+  --bg-secondary:  #121212;     /* slightly elevated panels */
+  --bg-surface:    rgba(15, 15, 15, 0.96);
+  --btn-bg:        #1a1a1a;
+  --border:        #262626;
+
+  /* Brand yellow — used by Play/Input tabs, focus rings, ::selection,
+     panel toggle. Centralised so a future palette swap is one line. */
+  --brand-yellow:  #facc15;
+
+  --text-heading:  #eaeaea;     /* near-white, not white — softer */
+  --text-primary:  #c4c4c4;     /* body */
+  --text-soft:     #9e9e9e;     /* secondary / sub-labels */
+  --text-muted:    #7a7a7a;     /* tertiary / hints */
+  --text-accent:   #6fbf72;     /* Medium green, slightly desaturated */
+
+  --chord-color:   #d6d6d6;
+  --stave-color:   #eaeaea;
+
+  /* Selection: neutral grey wash ("here you are"). */
+  --selection-bg:  rgba(196, 196, 196, 0.08);
+  --selection-bar: rgba(196, 196, 196, 0.42);
+  /* Playback: yellow highlighter — the universal "this is what's
+     playing right now" cue, deliberately the same yellow as the
+     voicing-selection highlight on the keyboard / fretboard. */
+  --playback-bg:   rgba(250, 204, 21, 0.22);
+  --playback-bar:  rgba(250, 204, 21, 0.90);
+
+  /* serif body, classic editorial */
+  --font-serif: "Source Serif 4", Charter, "Iowan Old Style", Georgia, "Times New Roman", serif;
+  --font-display: "Playfair Display", Georgia, "Times New Roman", serif;
+}
+
+:root.light {
+  /* Light palette — pure achromatic ramp (R=G=B). Any warm/cool bias
+     on chrome was reading as "tinted" — keep everything on the white→black
+     axis so the only colour on the page comes from intentional accents
+     (green text-accent, yellow playback). */
+  --bg-primary:    #ffffff;
+  --bg-secondary:  #fafafa;
+  --bg-surface:    rgba(250, 250, 250, 0.96);
+  --btn-bg:        #f5f5f5;     /* neutral-100 */
+  --border:        #e5e5e5;     /* neutral-200 */
+
+  --text-heading:  #171717;     /* neutral-900 */
+  --text-primary:  #404040;     /* neutral-700 */
+  --text-soft:     #525252;     /* neutral-600 */
+  --text-muted:    #737373;     /* neutral-500 */
+  --text-accent:   #1a8917;     /* Medium green — only intentional hue */
+
+  --chord-color:   #404040;
+  --stave-color:   #171717;
+
+  --selection-bg:  rgba(0, 0, 0, 0.04);
+  --selection-bar: rgba(0, 0, 0, 0.32);
+  /* Playback yellow highlighter — pushed warmer + more saturated so the
+     wash doesn't shift toward olive when it overlaps the dark stave
+     lines (which made it read as a cool / cyan tint). */
+  --playback-bg:   rgba(255, 215, 0, 0.34);
+  --playback-bar:  rgba(217, 159, 0, 0.95);
+}
+
+/* Native form-control highlight (focus rings, select option highlight,
+   checkbox tick). Defaulting it to the brand yellow keeps the OS-blue
+   focus colour from showing up on selects/inputs in light mode. */
+:root, :root.light {
+  accent-color: var(--brand-yellow);
+}
+
+/* Text selection — override the OS default cyan/blue with the brand
+   yellow so dragging across chord names / titles doesn't break the
+   warm palette. */
+::selection {
+  background: rgba(250, 204, 21, 0.40);
+  color: inherit;
+}
+::-moz-selection {
+  background: rgba(250, 204, 21, 0.40);
+  color: inherit;
+}
+
+/* Focus ring — same yellow, so tabbing through inputs/buttons doesn't
+   flash the browser-default blue ring. Only on keyboard focus
+   (`:focus-visible`) so mouse clicks don't get a permanent ring. */
+*:focus-visible {
+  outline: 2px solid var(--brand-yellow);
+  outline-offset: 1px;
+}
+
+/* Universal button hover — works on any background colour by dimming
+   slightly via opacity (filter:brightness fails on near-white/near-black
+   buttons). Apply via `btn-hover` class to any clickable element that
+   uses inline-style backgrounds (Save, Clear, Initialize, MyPage tab,
+   panel toggle, Play/Input tabs, etc.). */
+.btn-hover {
+  cursor: pointer;
+  transition: opacity 0.15s ease, transform 0.08s ease;
+}
+.btn-hover:hover {
+  opacity: 0.78;
+}
+.btn-hover:active {
+  transform: translateY(1px);
+}
+
+/* Subtle pulse for live "thinking" indicators (used by GenerateProgress
+   while the AI inference stream is still firing phase events). */
+@keyframes pearl-pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50%      { opacity: 0.45; transform: scale(0.8); }
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-serif);
+  font-size: 17px;               /* Medium body size */
+  line-height: 1.58;             /* Medium leading */
+  font-feature-settings: "kern" 1, "liga" 1, "onum" 1;  /* old-style numerals */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  transition: background 0.2s, color 0.2s;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+/* Editorial display typography for headings — apply via class */
+.font-display {
+  font-family: var(--font-display);
+  letter-spacing: -0.012em;
+}
+
+/* Tabular figures wherever numbers are aligned (BPM, time sig, beats) */
+.tabular {
+  font-feature-settings: "tnum" 1, "lnum" 1;
+}
+
+/* Inputs/buttons should keep the body serif by default — Tailwind resets
+   them to system-ui, which clashes with the editorial body. */
+input, button, select, textarea {
+  font-family: inherit;
+}
+
+/* Strip native OS chrome off selects so they don't flash the
+   blue/cyan outline + gradient that ships with Chrome / Edge. We
+   replace the dropdown arrow with a small inline SVG chevron drawn
+   in `currentColor`, so it inherits the surrounding text colour. */
+select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 6' width='10' height='6'><path d='M1 1l4 4 4-4' stroke='%23888' fill='none' stroke-width='1.5' stroke-linecap='round'/></svg>");
+  background-repeat: no-repeat;
+  background-position: right 6px center;
+  padding-right: 20px;
+}
+/* Hide the legacy IE arrow */
+select::-ms-expand { display: none; }
+
+/* Monospace stays monospace where explicitly requested (chord previews,
+   debug output) — but we want a slightly more editorial mono. */
+code, pre {
+  font-family: "iA Writer Mono S", "JetBrains Mono", "SF Mono", ui-monospace, monospace;
+}
+
+/* ----------------------------------------------------------------
+   Play panel device look (Teenage Engineering OP-1 / EP-133 feel).
+   Tokens for the panel, its keys and the LCD screen,
+   then the skin and state rules of the primitives in
+   components/RightPanel/play/ui/ (KeyButton, StepRow, Screen).
+   Geometry (heights, padding, type sizes) stays inline in those
+   components, so every pane's height adds up from its code.
+   The screen stays dark in the light theme, like a real device.
+---------------------------------------------------------------- */
+
+:root {
+  --panel-bg:          #161616;
+  --panel-border:      #2a2a2a;
+  --panel-glint:       rgba(255, 255, 255, 0.08);
+  --panel-shadow:      rgba(0, 0, 0, 0.6);
+
+  --key-bg:            #232323;
+  --key-bg-active:     #303030;
+  --key-border:        #333333;
+  --key-text:          #d6d6d6;
+  --key-text-active:   #ffffff;   /* label of a latched / pressed key */
+  --key-text-dim:      #8f8f8f;   /* sublabels and step-row labels */
+  --key-shadow:        0 2px 1px rgba(0, 0, 0, 0.5), inset 0 -2px 0 rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.12);
+  --key-shadow-active: inset 0 1px 3px rgba(0, 0, 0, 0.65);
+
+  --screen-bg:         #050505;
+  --screen-text:       #e9e9e9;
+  --screen-text-dim:   #8a8a8a;
+  --screen-shadow:     inset 0 0 0 1px rgba(255, 255, 255, 0.07), inset 0 2px 6px rgba(0, 0, 0, 0.8);
+
+  /* Same in both themes. JetBrains Mono loads with the other faces in index.html. */
+  --font-device:       "JetBrains Mono", "SF Mono", ui-monospace, monospace;
+}
+
+:root.light {
+  --panel-bg:          #e9e9e7;
+  --panel-border:      #d4d4d1;
+  --panel-glint:       rgba(255, 255, 255, 0.85);
+  --panel-shadow:      rgba(0, 0, 0, 0.16);
+
+  --key-bg:            #fafafa;
+  --key-bg-active:     #e1e1df;
+  --key-border:        #c9c9c6;
+  --key-text:          #262626;
+  --key-text-active:   #000000;
+  --key-text-dim:      #5e5e5c;
+  --key-shadow:        0 2px 1px rgba(0, 0, 0, 0.16), inset 0 -2px 0 rgba(0, 0, 0, 0.12), inset 0 1px 0 rgba(255, 255, 255, 0.9);
+  --key-shadow-active: inset 0 1px 3px rgba(0, 0, 0, 0.22);
+
+  --screen-bg:         #1c1c1c;
+  --screen-text:       #f0f0f0;
+  --screen-text-dim:   #9a9a9a;
+  --screen-shadow:     inset 0 0 0 1px rgba(0, 0, 0, 0.75), inset 0 2px 6px rgba(0, 0, 0, 0.6);
+}
+
+/* Bevelled enclosure and recessed control bays stay within the Play panel. */
+.te-device {
+  --font-device: Futura, "Futura PT", "Avenir Next", Avenir, system-ui, sans-serif;
+  --brand-yellow: #ec7737;
+  --panel-bg: #e3e3e5;
+  --panel-border: #b8b8bc;
+  --panel-glint: rgba(255, 255, 255, 0.72);
+  --panel-shadow: rgba(28, 28, 30, 0.22);
+  --panel-sheen: #ffffff66;
+  --fader-panel-bg: #d9d9dc;
+  --fader-label: #333333;
+  --fader-groove-edge: #888888;
+  --key-bg: #ededf0;
+  --key-bg-active: #d0d0d4;
+  --key-border: #bdbdc1;
+  --key-text: #303033;
+  --key-text-active: #1d1d1f;
+  --key-text-dim: #66666b;
+  --key-shadow: 0 2px 2px rgba(29, 29, 31, 0.2), inset 0 1px 0 #ffffffc7, inset 0 -1px 0 #9a9a9e;
+  --key-shadow-active: inset 0 1px 3px #63636766, inset 0 -1px 0 #f0f0f2;
+  --selection-face: linear-gradient(180deg, #c8c8cd, #d6d6da);
+  --selection-shadow: inset 0 2px 3px #5252564d, inset 0 -1px 0 #ffffffb3, 0 1px 0 #ffffff80;
+  --screen-bg: #11150e;
+  --screen-text: #e0ebd8;
+  --screen-text-dim: #8d9b80;
+  --screen-shadow: inset 0 1px 5px #000000bd, 0 1px 0 #ffffff96;
+  background: linear-gradient(135deg, var(--panel-sheen), transparent 42%),
+              repeating-linear-gradient(0deg, #33333304 0 1px, transparent 1px 3px), var(--panel-bg);
+  border: 1px solid var(--panel-border);
+  border-radius: 12px;
+  box-shadow: inset 0 1px 0 var(--panel-glint), inset 0 -1px 2px var(--panel-shadow),
+              0 4px 9px var(--panel-shadow);
+}
+:root:not(.light) .te-device {
+  --panel-bg: #17191b;
+  --panel-border: #33373b;
+  --panel-glint: rgba(255, 255, 255, 0.06);
+  --panel-shadow: rgba(0, 0, 0, 0.5);
+  --panel-sheen: #ffffff04;
+  --fader-panel-bg: #111315;
+  --fader-label: #c5c9cf;
+  --fader-groove-edge: #070809;
+  --key-bg: #222527;
+  --key-bg-active: #2a2d30;
+  --key-border: #101214;
+  --key-text: #d8dadd;
+  --key-text-dim: #a1a6ae;
+  --selection-face: linear-gradient(180deg, #202325, #282b2e);
+  --selection-shadow: inset 0 2px 3px #00000099, inset 0 -1px 0 #ffffff14, 0 1px 0 #ffffff05;
+}
+.te-step-meter {
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: #080d06;
+  box-shadow: none;
+}
+.te-performance-panel {
+  --screen-bg: #0b110d;
+  width: calc(100% + 16px);
+  margin-inline: -8px;
+  margin-top: -8px;
+  padding-top: 8px;
+  overflow: hidden;
+  border-radius: 11px 11px 0 0;
+  background: var(--screen-bg);
+}
+.te-performance-panel .te-transport {
+  padding: 0 8px 6px;
+}
+.te-live-display {
+  width: 100%;
+  padding: 8px 12px 6px;
+}
+.te-live-display .te-screen {
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+}
+.te-status-window {
+  --key-text-dim: var(--screen-text-dim);
+  min-width: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+  display: flex;
+  height: 60px;
+  flex-direction: column;
+  justify-content: center;
+}
+.te-playback-status {
+  gap: 6px;
+  width: 100%;
+  padding: 6px 0;
+  background: transparent;
+  box-shadow: none;
+}
+.te-status-window + .te-status-window {
+  padding-top: 0;
+  border-top: 0;
+}
+.te-playback-status .te-step-meter {
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: #111a11;
+  box-shadow: none;
+}
+.te-status-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  justify-content: space-between;
+  height: 16px;
+  margin: 0 0 4px;
+  color: var(--screen-text-dim);
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 16px;
+}
+.te-status-type {
+  flex: none;
+  width: auto;
+  color: var(--screen-text-dim);
+  font-size: 11px;
+  font-weight: 400;
+  line-height: 12px;
+  text-transform: uppercase;
+}
+.te-selection-pane {
+  height: 190px;
+  min-height: 190px;
+  overflow: visible;
+}
+.te-device .te-pane-tab {
+  height: 34px !important;
+  font-size: 12px !important;
+  letter-spacing: -0.02em;
+  text-transform: none;
+}
+.te-device .te-visual-key {
+  height: 26px !important;
+  font-size: 9px !important;
+  letter-spacing: normal;
+  text-transform: none;
+}
+.te-voicing-drawing {
+  --text-muted: var(--screen-text-dim);
+  --text-soft: var(--screen-text-dim);
+  --fret-label: var(--screen-text-dim);
+}
+.te-voicing-drawing svg {
+  max-height: clamp(64px, calc(8dvh - 8px), 124px);
+}
+
+/* VexFlow draws the clef, key and time signatures as SVG text that only inherits a fill;
+   pin them to the theme's stave colour, so they match the stave lines in both themes. */
+.vf-staff text {
+  fill: var(--stave-color);
+}
+
+/* On a full-height desktop, distribute the available height instead of
+   scrolling the hardware enclosure. Smaller windows retain a safe scroll fallback. */
+@media (min-height: 900px) {
+  .te-device {
+    --te-fader-bank-height: clamp(112px, 14dvh, 220px);
+    gap: 6px;
+    overflow-y: hidden;
+  }
+  .te-device .te-selection-pane {
+    height: auto;
+    min-height: 186px;
+    flex: 1 1 186px;
+  }
+}
+
+/* KeyButton. Hover dimming and the 1px press come from .btn-hover. */
+.te-key {
+  font-family: var(--font-device);
+  letter-spacing: 0.06em;
+  color: var(--key-text);
+  background: linear-gradient(180deg, var(--panel-glint), transparent 45%), var(--key-bg);
+  border: 1px solid var(--key-border);
+  border-radius: 4px;
+  box-shadow: var(--key-shadow);
+  -webkit-tap-highlight-color: transparent;
+  transition: opacity 0.15s ease, transform 0.08s ease,
+              background-color 0.08s ease, box-shadow 0.08s ease, color 0.08s ease;
+}
+.te-key[data-active],
+.te-key:active:not(:disabled) {
+  color: var(--key-text-active);
+  background: var(--key-bg-active);
+  box-shadow: var(--key-shadow-active);
+}
+.te-key:disabled {
+  opacity: 0.4;
+  cursor: default;
+  transform: none;
+}
+/* Recessed selection faces, with an amber lamp for the selected state. */
+.te-device .te-key:not(.te-transport__key) {
+  border: 1px solid transparent;
+  border-radius: 3px;
+  background: var(--selection-face);
+  color: var(--key-text);
+  box-shadow: var(--selection-shadow);
+}
+.te-device .te-key:not(.te-transport__key)[data-active],
+.te-device .te-key:not(.te-transport__key):active:not(:disabled) {
+  --key-text-dim: #6b5a3e;
+  background: radial-gradient(ellipse at 50% 42%, #fff0bb, #ebca8f 72%, #c39b62);
+  color: #3b3122;
+  box-shadow: inset 0 2px 4px #76542e55, inset 0 -1px 0 #fff6cfb3,
+              0 0 4px #edc47f33;
+}
+.te-device .te-key:not(.te-transport__key):hover {
+  filter: brightness(1.04);
+  opacity: 1;
+}
+/* The yellow focus ring barely shows on the light panel: use the key text colour. */
+:root.light .te-key:focus-visible {
+  outline-color: var(--key-text);
+}
+/* Forced colours drop the key backgrounds: outline the latched keys. */
+@media (forced-colors: active) {
+  .te-key[data-active]:not(:focus-visible) {
+    outline: 2px solid Highlight;
+    outline-offset: -4px;
+  }
+}
+
+/* Screen. */
+.te-screen {
+  font-family: var(--font-device);
+  color: var(--screen-text);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.035), rgba(255, 255, 255, 0) 45%), var(--screen-bg);
+  border-radius: 3px;
+  box-shadow: var(--screen-shadow);
+  --key-text-dim: var(--screen-text-dim);
+}

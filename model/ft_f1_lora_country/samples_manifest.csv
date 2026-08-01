@@ -1,0 +1,3 @@
+filename,genre,model,rank,seed,prompt,length_bars,bpm,key,time_sig,variant,arranged
+samples/country_lora.mid,country,F1 + LoRA (country),4,42,Dmaj-Gmaj|Dmaj-Gmaj|Dmaj-Gmaj|Dmaj-Gmaj|Dmaj-Gmaj|Dmaj-Gmaj|Dmaj-Gmaj|Dmaj-Gmaj,8,100,G major,4/4,lora_arranged,yes
+samples/country_chord_only.mid,country,F1 + LoRA (country),4,42,Dmaj-Gmaj|Dmaj-Gmaj|Dmaj-Gmaj|Dmaj-Gmaj|Dmaj-Gmaj|Dmaj-Gmaj|Dmaj-Gmaj|Dmaj-Gmaj,8,100,G major,4/4,lora_chord_only,no

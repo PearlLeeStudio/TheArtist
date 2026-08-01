@@ -1,0 +1,58 @@
+{
+  "synthetic_fixture": true,
+  "fixture": "backend/tests/fixtures/vector-score-f.pdf",
+  "expected_key": "F major",
+  "expected_chords": [
+    "F"
+  ],
+  "result": {
+    "title": "Original vector score",
+    "key": "F major",
+    "timeSignature": [
+      2,
+      4
+    ],
+    "measures": [
+      {
+        "chords": [
+          "F"
+        ],
+        "sourceLabel": "Page 1, system 1, bar 1",
+        "needsReview": true,
+        "note": "Read notes: F2, A2, C3. Candidates F / F6 / Fmaj7: Active MIDI pitches: 41, 45, 48; bass F (41); weighted chord coverage 100%. Structural chord pitch classes: 0, 5, 9.",
+        "chordBasis": "inferred",
+        "confidence": "medium",
+        "notes": [
+          "F2",
+          "A2",
+          "C3"
+        ],
+        "writtenNotes": [
+          "F2",
+          "A2",
+          "C3"
+        ],
+        "bassNotes": [
+          "F2"
+        ],
+        "noChord": false,
+        "timeSignature": [
+          2,
+          4
+        ],
+        "analysisSource": "local",
+        "requestId": null,
+        "model": null
+      }
+    ],
+    "sections": [],
+    "warnings": [
+      "Key signature is extracted independently of tonal-center analysis; relative major/minor is not assumed.",
+      "The tonal key is inferred from note durations and key signature. Confirm F major; alternatives: F major, F minor, D minor."
+    ],
+    "model": null,
+    "requestId": null,
+    "mode": "infer_harmony",
+    "analysisSource": "local"
+  }
+}

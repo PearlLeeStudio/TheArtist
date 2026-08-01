@@ -1,0 +1,38 @@
+run_name: phase0_v2_pop_baseline
+tokenizer_version: v2        # <-- NEW: use ChordTokenizerV2 (372 tokens, ROMAN/BEAT/SECTION)
+resume_from: null
+epochs: 3
+batch_size: 48               # was 64; v2 sequences are ~1.7× longer, lower batch to keep VRAM
+gradient_accumulation_steps: 3   # effective batch 144 (~original 128)
+lr: 3.0e-4
+weight_decay: 0.01
+warmup_epochs: 1
+max_grad_norm: 1.0
+d_model: 512
+n_heads: 8
+d_ff: 2048
+n_layers: 8
+max_seq_len: 384             # was 256; accommodates ROMAN+BEAT prefixes
+dropout: 0.1
+use_amp: true
+checkpoint_every: 1
+patience: 5
+num_workers: 4
+persistent_workers: true
+prefetch_factor: 4
+log_every_steps: 200
+# Phase 0 pop baseline under the enriched tokenizer v2.
+#
+# Why retrain from scratch: tokenizer_v2 changes the vocabulary AND the
+# per-chord sequence layout (ROMAN + BEAT prefixes, SECTION boundaries).
+# A checkpoint trained under v1 cannot be resumed — token IDs and
+# sequence shape both change.
+#
+# Prerequisites before launching:
+#   - train.py + dataset.py + preprocess.py must be updated to respect
+#     `tokenizer_version: v2` and generate/consume v2 sequences.
+#   - preprocess pipeline produces data/processed/songs.jsonl with
+#     per-chord SECTION labels (optional) — fallback: v2 encoder omits
+#     SECTION tokens for songs without `sections`.
+#
+# Wall-clock estimate: ~27h on RTX 4070 Mobile (same as v1 Phase 0).

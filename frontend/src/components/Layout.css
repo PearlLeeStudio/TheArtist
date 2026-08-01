@@ -1,0 +1,43 @@
+.artist-layout {
+  height: 100dvh;
+}
+
+/* Only the compact layout changes; desktop keeps the original centered header
+   and docked, resizable panel. The initial panel state uses the same query. */
+@media (max-width: 760px), (orientation: portrait) {
+  .artist-header {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0.25rem;
+    padding: 0.65rem 0.75rem 0.8rem;
+  }
+  .artist-header .header-actions {
+    position: static;
+    grid-row: 1;
+    justify-self: end;
+    margin-bottom: 0.25rem;
+  }
+  .artist-header h1 {
+    grid-row: 2;
+    font-size: clamp(1.65rem, 7vw, 2.25rem);
+    overflow-wrap: anywhere;
+  }
+  .artist-header > p { grid-row: 3; }
+  .editor-shell { position: relative; --panel-toggle-width: 36px; }
+  .editor-shell .score-pane { padding: 0.75rem; }
+  .editor-shell .editor-toolbar { flex-wrap: wrap; gap: 0.5rem; }
+  .editor-toolbar > input { order: 2; flex: 1 0 100%; width: 100%; }
+  .editor-toolbar > div { flex-wrap: wrap; flex: 1 1 auto; }
+  .editor-toolbar > div:empty { display: none; }
+  .editor-shell .side-panel {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: var(--panel-toggle-width);
+    max-width: calc(100% - var(--panel-toggle-width));
+    z-index: 30;
+    box-shadow: -5px 0 16px #0002;
+  }
+  .editor-shell .panel-toggle { position: relative; z-index: 31; }
+  .panel-toggle .panel-resize { display: none; }
+}

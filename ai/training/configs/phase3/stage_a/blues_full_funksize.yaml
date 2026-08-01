@@ -1,0 +1,29 @@
+# F1 Stage A controlled sweep: blues sub-sampled to funk-size
+# Method: full
+
+run_name: stageA_full_blues_funksize
+
+base_checkpoint: checkpoints/ft_jazz_pop80/best.pt
+target_genre: blues
+sources: ["funksize_subsample_blues"]
+
+peft_method: full
+
+seed: 42
+
+d_model: 512
+n_heads: 8
+d_ff: 2048
+n_layers: 8
+max_seq_len: 256
+dropout: 0.1
+
+epochs: 5
+batch_size: 32
+gradient_accumulation_steps: 2
+lr: 1.0e-05
+weight_decay: 0.01
+warmup_epochs: 1
+max_grad_norm: 1.0
+use_amp: true
+num_workers: 4

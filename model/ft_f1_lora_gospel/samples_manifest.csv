@@ -1,0 +1,3 @@
+filename,genre,model,rank,seed,prompt,length_bars,bpm,key,time_sig,variant,arranged
+samples/gospel_lora.mid,gospel,F1 + LoRA (gospel),4,42,Cmaj-Fmaj|Cmaj-Fmaj|Cmaj-Fmaj|Cmaj-Fmaj|Cmaj-Fmaj|Cmaj-Fmaj|Cmaj-Fmaj|Cmaj-Fmaj,8,90,F major,4/4,lora_arranged,yes
+samples/gospel_chord_only.mid,gospel,F1 + LoRA (gospel),4,42,Cmaj-Fmaj|Cmaj-Fmaj|Cmaj-Fmaj|Cmaj-Fmaj|Cmaj-Fmaj|Cmaj-Fmaj|Cmaj-Fmaj|Cmaj-Fmaj,8,90,F major,4/4,lora_chord_only,no

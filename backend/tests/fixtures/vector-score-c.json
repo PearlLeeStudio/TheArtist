@@ -1,0 +1,58 @@
+{
+  "synthetic_fixture": true,
+  "fixture": "backend/tests/fixtures/vector-score-c.pdf",
+  "expected_key": "C major",
+  "expected_chords": [
+    "C"
+  ],
+  "result": {
+    "title": "Original vector score",
+    "key": "C major",
+    "timeSignature": [
+      4,
+      4
+    ],
+    "measures": [
+      {
+        "chords": [
+          "C"
+        ],
+        "sourceLabel": "Page 1, system 1, bar 1",
+        "needsReview": true,
+        "note": "Read notes: C4, E4, G4. Candidates C / C6 / Cmaj7: Active MIDI pitches: 60, 64, 67; bass C (60); weighted chord coverage 100%. Structural chord pitch classes: 0, 4, 7.",
+        "chordBasis": "inferred",
+        "confidence": "medium",
+        "notes": [
+          "C4",
+          "E4",
+          "G4"
+        ],
+        "writtenNotes": [
+          "C4",
+          "E4",
+          "G4"
+        ],
+        "bassNotes": [
+          "C4"
+        ],
+        "noChord": false,
+        "timeSignature": [
+          4,
+          4
+        ],
+        "analysisSource": "local",
+        "requestId": null,
+        "model": null
+      }
+    ],
+    "sections": [],
+    "warnings": [
+      "Key signature is extracted independently of tonal-center analysis; relative major/minor is not assumed.",
+      "The tonal key is inferred from note durations and key signature. Confirm C major; alternatives: C major, C minor, A minor."
+    ],
+    "model": null,
+    "requestId": null,
+    "mode": "infer_harmony",
+    "analysisSource": "local"
+  }
+}

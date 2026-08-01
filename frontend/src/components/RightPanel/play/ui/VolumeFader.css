@@ -1,0 +1,151 @@
+.te-volume-bank {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 4px;
+  box-sizing: border-box;
+  width: 100%;
+  height: var(--te-fader-bank-height, 220px);
+  min-width: 0;
+  min-height: var(--te-fader-bank-height, 220px);
+  padding: 8px 6px;
+  border: 0;
+  border-radius: 0;
+  background: var(--fader-panel-bg, #d9d9dc);
+  box-shadow: none;
+}
+
+.te-volume-fader {
+  /* Visible and native caps share the height used by travel compensation. */
+  --te-volume-thumb-size: 10px;
+  --te-volume-thumb-width: var(--te-volume-thumb-size);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-width: 0;
+  min-height: 0;
+  height: 100%;
+  margin: 0;
+  cursor: ns-resize;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.te-volume-fader-travel {
+  position: relative;
+  display: block;
+  flex: 1 1 auto;
+  width: 100%;
+  min-height: 65px;
+  max-height: 220px;
+}
+
+.te-volume-fader-groove {
+  position: absolute;
+  box-sizing: border-box;
+  top: calc(var(--te-volume-thumb-size) / 2);
+  bottom: calc(var(--te-volume-thumb-size) / 2);
+  left: calc(50% - 3.5px);
+  width: 7px;
+  border: 1px solid var(--fader-groove-edge, #888888);
+  border-radius: 4px;
+  background: linear-gradient(90deg, #080808, #202020 55%, #101010);
+  box-shadow: inset 2px 0 3px rgb(0 0 0 / 65%),
+              inset 0 1px 2px rgb(0 0 0 / 70%),
+              1px 0 0 rgb(255 255 255 / 24%);
+  pointer-events: none;
+}
+
+.te-volume-fader-thumb {
+  position: absolute;
+  left: calc(50% - var(--te-volume-thumb-width) / 2);
+  box-sizing: border-box;
+  width: var(--te-volume-thumb-width);
+  height: var(--te-volume-thumb-size);
+  border: 1px solid #8d8d92;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 28%, #f8f8fa, #d8d8dc 52%, #a8a8ae);
+  box-shadow: 0 1px 1.5px rgb(0 0 0 / 20%),
+              inset 0 1px 1px rgb(255 255 255 / 75%),
+              inset 0 -1px 1px rgb(0 0 0 / 8%);
+  pointer-events: none;
+  transition: filter 80ms ease;
+}
+
+.te-volume-fader-input {
+  position: absolute;
+  inset: 0;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  writing-mode: vertical-lr;
+  direction: rtl;
+  appearance: none;
+  -webkit-appearance: none;
+  opacity: 0;
+  cursor: ns-resize;
+  touch-action: none;
+}
+
+/* Matching thumb dimensions keep the native pointer travel aligned with the face. */
+.te-volume-fader-input::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  background: transparent;
+}
+
+.te-volume-fader-input::-webkit-slider-thumb {
+  box-sizing: border-box;
+  width: var(--te-volume-thumb-width);
+  height: var(--te-volume-thumb-size);
+  border: 0;
+  border-radius: 50%;
+  appearance: none;
+  -webkit-appearance: none;
+  background: transparent;
+}
+
+.te-volume-fader-input::-moz-range-track {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  background: transparent;
+}
+
+.te-volume-fader-input::-moz-range-thumb {
+  box-sizing: border-box;
+  width: var(--te-volume-thumb-width);
+  height: var(--te-volume-thumb-size);
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+}
+
+.te-volume-fader-input:focus-visible ~ .te-volume-fader-thumb {
+  outline: 1px solid var(--fader-label, #333333);
+  outline-offset: 3px;
+}
+
+.te-volume-fader-input:hover ~ .te-volume-fader-thumb,
+.te-volume-fader-input:active ~ .te-volume-fader-thumb {
+  filter: brightness(1.06);
+}
+
+.te-volume-fader-label {
+  display: block;
+  flex: none;
+  max-width: 100%;
+  color: var(--fader-label, #333333);
+  font-family: var(--font-device);
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 16px;
+  letter-spacing: -0.03em;
+  text-align: center;
+  white-space: nowrap;
+}

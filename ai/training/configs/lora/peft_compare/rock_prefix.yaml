@@ -1,0 +1,32 @@
+# Prefix-tuning PEFT comparison: rock
+# Custom implementation (see training/prefix_tuning.py) — HF PEFT's
+# PrefixTuningConfig requires a HF-transformers past_key_values interface
+# that the custom MusicTransformer does not expose, so we ship our own
+# PrefixEncoder + PrefixTuningWrapper.
+
+run_name: ft_f1_prefix_rock
+
+base_checkpoint: checkpoints/ft_jazz_pop80/best.pt
+target_genre: rock
+sources: ["chordonomicon_rock"]
+
+d_model: 512
+n_heads: 8
+d_ff: 2048
+n_layers: 8
+max_seq_len: 256
+dropout: 0.1
+
+peft_method: prefix_tuning
+prefix_len: 20
+prefix_init_std: 0.02
+
+epochs: 8
+batch_size: 32
+gradient_accumulation_steps: 2
+lr: 3.0e-4
+weight_decay: 0.01
+warmup_epochs: 1
+max_grad_norm: 1.0
+use_amp: true
+num_workers: 4

@@ -1,0 +1,7 @@
+.operation-progress { width: 100%; padding: 8px 0; }
+.operation-progress__label { display: flex; justify-content: space-between; gap: 12px; margin-bottom: 7px; font-size: 12px; color: var(--text-soft); }
+.operation-progress__label > :last-child { color: var(--text-muted); font-variant-numeric: tabular-nums; flex-shrink: 0; }
+.operation-progress__track { height: 4px; overflow: hidden; background: var(--border); border-radius: 2px; }
+.operation-progress__track > span { display: block; width: 35%; height: 100%; background: var(--brand-yellow); animation: operation-progress-travel 1.4s ease-in-out infinite; }
+@keyframes operation-progress-travel { from { transform: translateX(-100%); } to { transform: translateX(386%); } }
+@media (prefers-reduced-motion: reduce) { .operation-progress__track > span { animation: none; width: 100%; opacity: .65; } }
